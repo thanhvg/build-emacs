@@ -6,6 +6,6 @@ export LD_LIBRARY_PATH=/home/thanh/gcc/lib
 export LIBRARY_PATH=/home/thanh/gcc/lib
 echo $PATH
 ./autogen.sh
-./configure --with-nativecomp --prefix=/home/thanh/gccemacs --bindir=/home/thanh/bin/
+./configure --with-nativecomp --with-modules --prefix=/home/thanh/gccemacs
 make -j4 NATIVE_FAST_BOOT=1
 make install
