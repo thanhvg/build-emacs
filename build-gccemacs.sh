@@ -7,5 +7,5 @@ export LIBRARY_PATH=/home/thanh/gcc/lib
 echo $PATH
 ./autogen.sh
 ./configure --with-nativecomp --with-modules --prefix=/home/thanh/gccemacs
-make -j4 NATIVE_FAST_BOOT=1
+make -j4 
 make install
