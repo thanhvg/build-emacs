@@ -1,3 +1,4 @@
+rm -r ~/emacs27 
 cd ../emacs27
 git clean -fdx
 git pull origin emacs-27

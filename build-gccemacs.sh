@@ -1,4 +1,5 @@
 cd ../gccemacs
+rm -r ~/gccemacs
 git clean -fdx
 git pull origin feature/native-comp
 export PATH="/home/thanh/gcc/bin:${PATH}"
