@@ -22,7 +22,7 @@ if [ "$ready_choice" = "y" ]; then
     echo "Installing\n";
 else
     echo "Exiting\n";
-    exit 1
+    exit 0
 fi
 
 make -j4
