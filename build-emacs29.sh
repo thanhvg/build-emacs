@@ -6,22 +6,14 @@ git pull
 # enable this for 20.04
 # export CC=/usr/bin/gcc-10 CXX=/usr/bin/gcc-10
 
-read -p "Apply CC/CCX settings for 20.04 (y/n)?" gcc_choice
-if [ "$gcc_choice" = "y" ]; then
-    echo "applying gcc\n";
-    export CC=/usr/bin/gcc-10 CXX=/usr/bin/gcc-10
-else
-    echo "use system gcc\n";
-fi
-
 ./autogen.sh
 
-read -p "Use gkt and xwidgets instead of lucid (y/N)" ready_choice
+read -p "Use gkt and xwidgets instead of lucid (y/N) " ready_choice
 
 if [ "$ready_choice" = "y" ]; then
-    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg  -with-tree-sitter --with-xwidgets 
+    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-xwidgets
 else
-    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg  -with-tree-sitter --with-x-toolkit=lucid 
+    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-x-toolkit=lucid 
 fi
 
 read -p "Ready to install (y/N)?" ready_choice
