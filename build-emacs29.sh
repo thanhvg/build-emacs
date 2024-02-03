@@ -11,9 +11,9 @@ git pull
 read -p "Use gkt and xwidgets instead of lucid (y/N) " ready_choice
 
 if [ "$ready_choice" = "y" ]; then
-    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-xwidgets
+    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-imagemagick --with-webp --with-xwidgets
 else
-    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-x-toolkit=lucid 
+    ./configure  --prefix=$HOME/emacs29 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-imagemagick --with-webp --with-x-toolkit=lucid 
 fi
 
 read -p "Ready to install (y/N)?" ready_choice
