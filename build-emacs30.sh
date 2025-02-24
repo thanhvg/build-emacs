@@ -6,12 +6,12 @@ git pull
 
 ./autogen.sh
 
-read -p "Use gkt and xwidgets instead of lucid (y/N) " ready_choice
+read -p "Use gkt instead of lucid (y/N) " ready_choice
 
 if [ "$ready_choice" = "y" ]; then
-    ./configure  --prefix=$HOME/emacs30 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-imagemagick --with-webp --with-xwidgets
+    ./configure  --prefix=$HOME/emacs30 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-imagemagick --with-webp --without-compress-install
 else
-    ./configure  --prefix=$HOME/emacs30 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-imagemagick --with-webp --with-x-toolkit=lucid 
+    ./configure  --prefix=$HOME/emacs30 --with-native-compilation --with-modules --with-json --with-rsvg -with-tree-sitter --with-imagemagick --with-webp --with-x-toolkit=lucid --without-compress-install
 fi
 
 read -p "Ready to install (y/N)?" ready_choice
