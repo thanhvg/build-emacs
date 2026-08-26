@@ -1,8 +1,9 @@
-EMACS_VERSION="31.0.91"
-URL="https://alpha.gnu.org/gnu/emacs/pretest/emacs-$EMACS_VERSION.tar.xz"
+EMACS_VERSION="31.1"
+EMACS_DIR="emacs31"
+URL="https://ftpmirror.gnu.org/emacs/emacs-$EMACS_VERSION.tar.xz"
 DEST_DIR="$HOME/git"
 
-read -p "First time build? (y/N) " ready_choice
+read -p "First time build? Need to download source code?(y/N) " ready_choice
 
 if [ "$ready_choice" = "y" ]; then
     mkdir -p "$DEST_DIR"
@@ -11,7 +12,7 @@ if [ "$ready_choice" = "y" ]; then
     rm "$DEST_DIR/emacs-$EMACS_VERSION.tar.xz"
 fi
 
-rm -rf ~/emacs31
+rm -rf ~/$EMACS_DIR
 
 cd "$DEST_DIR/emacs-$EMACS_VERSION"
 
@@ -20,9 +21,9 @@ cd "$DEST_DIR/emacs-$EMACS_VERSION"
 read -p "Use gkt instead of lucid (y/N) " ready_choice
 
 if [ "$ready_choice" = "y" ]; then
-    ./configure --prefix=$HOME/emacs31 --with-native-compilation --with-modules --with-json --with-rsvg --with-tree-sitter --with-imagemagick --with-webp --without-compress-install
+    ./configure --prefix=$HOME/$EMACS_DIR --with-native-compilation --with-modules --with-json --with-rsvg --with-tree-sitter --with-imagemagick --with-webp --without-compress-install
 else
-    ./configure --prefix=$HOME/emacs31 --with-native-compilation --with-modules --with-json --with-rsvg --with-tree-sitter --with-imagemagick --with-webp --with-x-toolkit=lucid --without-compress-install
+    ./configure --prefix=$HOME/$EMACS_DIR --with-native-compilation --with-modules --with-json --with-rsvg --with-tree-sitter --with-imagemagick --with-webp --with-x-toolkit=lucid --without-compress-install
 fi
 
 read -p "Ready to install (y/N)? " ready_choice
